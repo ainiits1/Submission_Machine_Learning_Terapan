@@ -51,22 +51,25 @@ Adapun tahapan persiapan data yang dilakukan yaitu:
 Adapun tahapan dalam membuat model yaitu:
   1. **Menyiapkan dataframe untuk analisis model**. Tahapan bertujuan untuk membuat struktur tabel yang akan digunakan untuk menyimpan dan membandingkan nilai error dari masing-masing model pada data train dan test.
   2. **Membuat model KNN** -> melatih model menggunakan ```knn.fit(X_train, y_train)```
-     a. Parameter : ```n_neighbors = 5```
+     ```
+     a. Parameter : n_neighbors = 5
      b. Kelebihan :
          - Sederhana dan mudah dipahami
          - Tidak membutuhkan pelatihan model yang kompleks
      c. Kekurangan :
          - Sensitif terhadap skala dan outlier
          - Tidak efisien untuk data besar
-         - Kinerja turun pada dimensi tinggi 
+         - Kinerja turun pada dimensi tinggi
+     ```
   4. **Membuat model Random Forest** -> melatih model menggunakan ```Random_Forest.fit(X_train, y_train)```
+     ```
      a. Parameter :
-         - ```n_estimators = 100```
-         - ```max_depth = 7```
-         - ```min_samples_split = 2```, ```min_samples_leaf = 2```
-         - ```max_features = 'sqrt'```
-         - ```random_state = 55```
-         - ```n_jobs = -1```
+         - n_estimators = 100
+         - max_depth = 7
+         - min_samples_split = 2, min_samples_leaf = 2
+         - max_features = 'sqrt'
+         - random_state = 55
+         - n_jobs = -1
      b. Kelebihan :
          - Kuat terhadap overfitting
          - Cocok untuk data kompleks dan besar
@@ -74,6 +77,7 @@ Adapun tahapan dalam membuat model yaitu:
      c. Kekurangan:
          - Interpretasi lebih sulit daripada KNN
          - Waktu training lebih lama
+     ```
      
 **Model terbaik** yang dipilih yaitu **Random Forest** karena memberikan performa yang lebih akurat secara konsisten, baik di data train maupun data test berdasarkan nilai MSE terkecil.
 
@@ -81,12 +85,14 @@ Adapun tahapan dalam membuat model yaitu:
 Adapun metrik yang digunakan dalam proyek ini adalah **Mean Squared Error (MSE)**. MSE adalah rata-rata kuadrat selisih antara nilai prediksi dan nilai aktual. MSE digunakan untuk mengukur seberapa dekat prediksi model terhadap nilai sebenarnya. Nilai MSE yang lebih rendah menunjukkan bahwa model memiliki performa yang lebih baik.
 
 **Hasil evaluasi model**
+```
   1. **KNN**
      a. MSE (Train) : 0.010937
      b. MSE (Test) : 0.019178
   3. **Random Forest**
      a. MSE (Train) : 0.007687
      b. MSE (Test) : 0.015682
+```
 
 **Interpretasi**
 - Model Random Forest (RF) memiliki nilai MSE yang lebih rendah baik pada data training maupun testing dibandingkan KNN, yang menunjukkan bahwa RF memiliki performa yang lebih baik dalam mempelajari pola dari data dan melakukan generalisasi.
