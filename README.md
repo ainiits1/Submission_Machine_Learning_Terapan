@@ -46,9 +46,10 @@ Setelah proses EDA, diperoleh output:
 
 ## Data Preparation
 Adapun tahapan persiapan data yang dilakukan yaitu:
-  1. **Encoding fitur kategori menggunakan OneHotEncoding**. Hal ini dilakukan agar data bisa diproses oleh algoritma machine learning karena sebagian besar algoritma machine learning hanya dapat menerima input berupa nilai numerik.
-  2. **Membagi data Train dan data Test menggunakan fungsi train_test_split dari library sklearn**. Hal ini dilakukan untuk mengukur performa model secara objektif, yakni data training digunakan untuk melatih model dan data testing digunakan untuk mengevaluasi kinerja model pada data yang belum pernah dilihat sebelumnya.
-  3. **Standarisasi menggunakan StandardScaler**. Hal ini dilakukan untuk menyamakan skala antar fitur karena tanpa standarisasi, fitur dengan nilai besar bisa mendominasi proses pembelajaran model. Selain itu juga untuk mencegah biar karena skala yang berbeda.
+  1. **Menghapus variabel yang tidak digunakan**, yaitu Student_ID dan Pass_Fail.
+  2. **Encoding fitur kategori menggunakan OneHotEncoding**. Hal ini dilakukan agar data bisa diproses oleh algoritma machine learning karena sebagian besar algoritma machine learning hanya dapat menerima input berupa nilai numerik.
+  3. **Membagi data Train dan data Test menggunakan fungsi train_test_split dari library sklearn**. Hal ini dilakukan untuk mengukur performa model secara objektif, yakni data training digunakan untuk melatih model dan data testing digunakan untuk mengevaluasi kinerja model pada data yang belum pernah dilihat sebelumnya.
+  4. **Standarisasi menggunakan StandardScaler**. Hal ini dilakukan untuk menyamakan skala antar fitur karena tanpa standarisasi, fitur dengan nilai besar bisa mendominasi proses pembelajaran model. Selain itu juga untuk mencegah biar karena skala yang berbeda.
 
 ## Modeling
 Adapun tahapan dalam membuat model yaitu:
@@ -64,6 +65,10 @@ Adapun tahapan dalam membuat model yaitu:
          - Tidak efisien untuk data besar
          - Kinerja turun pada dimensi tinggi
      ```
+     **Cara Kerja KNN:**
+     KNN bekerja dengan membandingkan jarak satu sampel ke sampel pelatihan      lain dengan memilih sejumlah k tetangga terdekat (dengan k adalah
+     sebuah angka positif). 
+     
   4. **Membuat model Random Forest** -> melatih model menggunakan ```Random_Forest.fit(X_train, y_train)```
      ```
      a. Parameter :
@@ -81,8 +86,11 @@ Adapun tahapan dalam membuat model yaitu:
          - Interpretasi lebih sulit daripada KNN
          - Waktu training lebih lama
      ```
+     **Cara kerja Random Forest:**
+     Random forest bekerja dengan membangun banyak pohon keputusan               (decision trees) dan menggabungkan hasilnya untuk membuat prediksi          yang lebih akurat dan stabil. Algoritma ini bekerja dengan membangun        banyak pohon keputusan dari subset data yang diambil secara acak            (bootstrap). Saat membagi node, hanya sebagian fitur yang dipilih           secara acak untuk mengurangi korelasi antar pohon. Hasil prediksi           diperoleh melalui voting (untuk klasifikasi) atau rata-rata (untuk          regresi)
+
      
-**Model terbaik** yang dipilih yaitu **Random Forest** karena memberikan performa yang lebih akurat secara konsisten, baik di data train maupun data test berdasarkan nilai MSE terkecil.
+**Model terbaik** yang dipilih yaitu **Random Forest** karena memberikan performa yang lebih akurat secara konsisten, baik di data train maupun data test dan juga berdasarkan nilai MSE terkecil.
 
 ## Evaluation
 Adapun metrik yang digunakan dalam proyek ini adalah **Mean Squared Error (MSE)**. MSE adalah rata-rata kuadrat selisih antara nilai prediksi dan nilai aktual. MSE digunakan untuk mengukur seberapa dekat prediksi model terhadap nilai sebenarnya. Nilai MSE yang lebih rendah menunjukkan bahwa model memiliki performa yang lebih baik.
@@ -96,7 +104,9 @@ Adapun metrik yang digunakan dalam proyek ini adalah **Mean Squared Error (MSE)*
      a. MSE (Train) : 0.007687
      b. MSE (Test) : 0.015682
 ```
+Berdasarkan hasil analisis, variabel yang paling berpengaruh terhadap hasil nilai ujian akhir siswa yaitu variabel Jam belajar perminggu (Study_Hourse_per_Week), Tingkat kehadiran (Attendace_Rate) dan Hasil nilai ujian sebelumnya (Past_Exam_Scores), akan tetapi ketiga variabel tersebut menunjukkan skor korelasi dibawah 0.5, yang artinya korelasi positif sedang.
 
-**Interpretasi**
-- Model Random Forest (RF) memiliki nilai MSE yang lebih rendah baik pada data training maupun testing dibandingkan KNN, yang menunjukkan bahwa RF memiliki performa yang lebih baik dalam mempelajari pola dari data dan melakukan generalisasi.
-- Selisih antara MSE training dan testing untuk kedua model juga relatif kecil, yang berarti tidak terjadi overfitting yang signifikan.
+Model juga dapat memprediksi hasil nilai ujian akhir siswa, yakni seperti contoh sebagai berikut:
+
+
+Dalam proyek ini berhasil membuat serta membandingkan antara 2 algoritma model machine learning. Model Random Forest (RF) memiliki nilai MSE yang lebih rendah baik pada data training maupun testing dibandingkan KNN, yang menunjukkan bahwa RF memiliki performa yang lebih baik dalam mempelajari pola dari data dan melakukan generalisasi. Kemudian penggunaan matriks evaluasi MSE (Mean Squared Eror) juga sangat berdampak untuk mengetahui sebaik mana model yang dihasilkan. Selisih antara MSE training dan testing untuk kedua model juga relatif kecil, yang berarti tidak terjadi overfitting yang signifikan.
