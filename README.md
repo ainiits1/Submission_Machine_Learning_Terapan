@@ -41,8 +41,74 @@ Adapun tahapan yang diperlukan untuk memahami data yaitu:
 3. **Exploratory Data Analysis** - Univariate Analysis (visualisasi fitur kategorik dan numerik)
 4. **Exploratory Data Analysis** - Multivariate Analysis (mengecek pengaruh fitur kategorik dan numerik terhadap variabel dependen yakni Final_Exam_Score serta menampilkan matriks korelasinya)
 
-Setelah proses EDA, diperoleh output:
+### Exploratory Data Analysis
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20200627.png?raw=true)
 
+Dari output 0 diatas memberikan informasi bahwa tidak ada data duplikat dalam data.
+
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20200637.png?raw=true)
+
+Output 0 di masing-masing kolom memberikan informasi bahwa tidak ada missing value dalam data.
+
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20200706.png?raw=true)
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20200714.png?raw=true)
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20200725.png?raw=true)
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20200738.png?raw=true)
+
+Dari keempat output diatas, boxplot menunjukkan tidak adanya outlier pada data karena tidak terdapat titik di luar batas whiskers (garis horizontal di ujung kiri dan kanan).
+
+### EDA-Univariate Analysis
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20210301.png?raw=true)
+
+Dari output di atas, memberikan informasi bahwa data pada kolom gender terdiri dari 375 female (perempuan) dan 333 male (laki-laki). Dari data persentase dapat disimpulkan bahwa 53% jenis kelamin siswa adalah female (perempuan).
+
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20210317.png?raw=true)
+
+Dari output diatas, terdapat 5 kategori level pendidikan orang tua, yakni Bachelors, High School, Masters, dan PhD. Dari data persentase dapat kita simpulkan bahwa sebagian besar pendidikan terakhir orang tua siswa adalah Bachelors dan High School.
+
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20210336.png?raw=true)
+
+Dari output diatas memberikan informasi bahwa masih banyak siswa yang tidak memiliki akses internet di rumahnya yakni sebesar 53,8%.
+
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20210353.png?raw=true)
+
+Dari output di atas memberikan informasi bahwa persentase jumlah siswa yang mengikuti kegiatan ekstrakurikuler hampir sama, akan tetapi masih banyak siswa yang tidak mengikuti kegiatan ekstrakurikuler, yakni selisih 2% dengan jumlah siswa yang mengikuti kegiatan ekstrakurikuler.
+
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20210407.png?raw=true)
+
+Dari output di atas memberikan informasi bahwa jumlah siswa dengan kategori lulus atau gagal dalam ujian adalah sama, yakni 50% lulus dan 50% gagal.
+
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20210432.png?raw=true)
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20210446.png?raw=true)
+
+Berdasarkan pengamatan histogram variabel "Final_Exam_Score", dapat diperoleh beberapa informasi:
+- Sebagian besar hasil nilai ujian akhir berada di kisaran rendah, terutama pada skor 50 yang memiliki frekuensi sangat tinggi.
+- Sebagian besar nilai siswa berada di bawah 65, yang mengindikasikan performa akademik cenderung rendah secara umum
+- Rentang nilai cukup lebar, yaitu dari sekitar 50 hingga 77, akan tetapi nilai yang tinggi jarang muncul
+- Distribusi hasil nilai ujian miring ke kiri, terlihat banyak data yang menumpuk di sisi kanan akan tetapi ada ekor panjang ke kiri, dengan lonjakan besar pada nilai 50.
+
+### EDA-Multivariate Analysis
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20210650.png?raw=true)
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20210702.png?raw=true)
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20210714.png?raw=true)
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20210723.png?raw=true)
+
+Dengan mengamati rata-rata hasil ujian akhir terhadap beberapa fitur kategori diatas, maka dapat diperoleh beberapa informasi yakni sebagai berikut:
+- Pada fitur gender, rata-rata hasil ujian akhir cenderung mirip hanya selisih 0,1. Dengan demikian, fitur gender memiliki pengaruh yang kecil terhadap rata-rata hasil nilai ujian akhir siswa.
+- Pada fitur Parental_Education_Level, siswa dengan orang tua lulusan high school memiliki nilai rata-rata tertinggi sedangkan PhD justru memiliki rata-rata terendah. Ini menunjukkan bahwa tingkat pendidikan orang tua tidak secara langsung menjamin skor anaknya lebih tinggi. Dengan demikian, fitur Parental_Education_Level memiliki pengaruh yang kecil terhadap rata-rata hasil nilai ujian akhir siswa.
+- Pada fitur Internet_Acces_at_Home, rata-rata siswa, rata-rata hasil ujian akhir cenderung mirip. Dengan demikian, fitur Internet_Acces_at_Home memiliki pengaruh yang kecil terhadap hasil nilai ujian akhir siswa.
+- Pada fitur Extracurricular_Activities, rata-rata siswa yang mengikuti kegiatan ekstrakurilkuler dengan yang tidak mengikuti memiliki perbedaan yang sangat kecil. Ini artinya kegiatan ektrakurikuler hampir tidak memberikan pengaruh signifikan terhadap rata-rata nilai ujian akhir.
+
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20210746.png?raw=true)
+
+Pada pola sebaran data diatas yakni pada fitur target Final_Exam_Score, terlihat :
+- Study_Hourse_per_Week memiliki korelasi positif lemah, semakin banyak jam belajar per minggu skor ujian akhir cenderung sedikit meningkat.
+- Attendance_Rate memiliki korelasi positif yang sedikit lebih kuat dibanding jam belajar, semakin tinggi kehadiran , skor ujian akhir juga cenderung lebih tinggi.
+- Past_Exam_Scores memiliki korelasi positif yang paling jelas. Siswa dengan nilai ujian sebelumnya tinggi cenderung mendapat nilai akhir yang tinggi juga.
+
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20210806.png?raw=true)
+
+Dari output di atas, diperoleh informasi bahwa skor korelasi Study_Hours_per_Week sebesar 0,37, Attendance_Rate sebesar 0,46, dan Past_Exam_Scores sebesar 0,49. Dalam hal ini korelasi ketiganya masih di bawah 0,5 yang artinya tidak ada hubungan linear yang sangat kuat, namun tetap cukup relevan untuk dipertimbangkan dalam model prediksi.
 
 ## Data Preparation
 Adapun tahapan persiapan data yang dilakukan yaitu:
@@ -66,8 +132,7 @@ Adapun tahapan dalam membuat model yaitu:
          - Kinerja turun pada dimensi tinggi
      ```
      **Cara Kerja KNN:**
-     KNN bekerja dengan membandingkan jarak satu sampel ke sampel pelatihan      lain dengan memilih sejumlah k tetangga terdekat (dengan k adalah
-     sebuah angka positif). 
+     KNN bekerja dengan membandingkan jarak satu sampel ke sampel pelatihan lain dengan memilih sejumlah k tetangga terdekat      (dengan k adalah sebuah angka positif). 
      
   4. **Membuat model Random Forest** -> melatih model menggunakan ```Random_Forest.fit(X_train, y_train)```
      ```
@@ -87,9 +152,8 @@ Adapun tahapan dalam membuat model yaitu:
          - Waktu training lebih lama
      ```
      **Cara kerja Random Forest:**
-     Random forest bekerja dengan membangun banyak pohon keputusan               (decision trees) dan menggabungkan hasilnya untuk membuat prediksi          yang lebih akurat dan stabil. Algoritma ini bekerja dengan membangun        banyak pohon keputusan dari subset data yang diambil secara acak            (bootstrap). Saat membagi node, hanya sebagian fitur yang dipilih           secara acak untuk mengurangi korelasi antar pohon. Hasil prediksi           diperoleh melalui voting (untuk klasifikasi) atau rata-rata (untuk          regresi)
-
-     
+     Random forest bekerja dengan membangun banyak pohon keputusan (decision trees) dan menggabungkan hasilnya untuk membuat      prediksi yang lebih akurat dan stabil. Algoritma ini bekerja dengan membangun banyak pohon keputusan dari subset data        yang diambil secara acak (bootstrap). Saat membagi node, hanya sebagian fitur yang dipilih secara acak untuk mengurangi      korelasi antar pohon. Hasil prediksi diperoleh melalui voting (untuk klasifikasi) atau rata-rata (untuk regresi)
+   
 **Model terbaik** yang dipilih yaitu **Random Forest** karena memberikan performa yang lebih akurat secara konsisten, baik di data train maupun data test dan juga berdasarkan nilai MSE terkecil.
 
 ## Evaluation
