@@ -107,6 +107,6 @@ Adapun metrik yang digunakan dalam proyek ini adalah **Mean Squared Error (MSE)*
 Berdasarkan hasil analisis, variabel yang paling berpengaruh terhadap hasil nilai ujian akhir siswa yaitu variabel Jam belajar perminggu (Study_Hourse_per_Week), Tingkat kehadiran (Attendace_Rate) dan Hasil nilai ujian sebelumnya (Past_Exam_Scores), akan tetapi ketiga variabel tersebut menunjukkan skor korelasi dibawah 0.5, yang artinya korelasi positif sedang.
 
 Model juga dapat memprediksi hasil nilai ujian akhir siswa, yakni seperti contoh sebagai berikut:
-
+![alt text](https://github.com/ainiits1/Submission_Machine_Learning_Terapan/blob/main/Screenshot%202025-05-24%20210146.png?raw=true)
 
 Dalam proyek ini berhasil membuat serta membandingkan antara 2 algoritma model machine learning. Model Random Forest (RF) memiliki nilai MSE yang lebih rendah baik pada data training maupun testing dibandingkan KNN, yang menunjukkan bahwa RF memiliki performa yang lebih baik dalam mempelajari pola dari data dan melakukan generalisasi. Kemudian penggunaan matriks evaluasi MSE (Mean Squared Eror) juga sangat berdampak untuk mengetahui sebaik mana model yang dihasilkan. Selisih antara MSE training dan testing untuk kedua model juga relatif kecil, yang berarti tidak terjadi overfitting yang signifikan.
