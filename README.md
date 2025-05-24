@@ -22,7 +22,7 @@ Berdasarkan pertanyaan yang telah diuraikan, akan dibuat sebuah program _predict
 Berdasarkan tujuan yang ada, pendekatan dengan dua algoritma machine learning akan digunakan untuk mencapai tujuan tersebut, yakni akan digunakan **algoritma KNN** dan **Random Forest**, serta evalusi model menggunakan **_Mean Squared Error_ (MSE)**.
 
 ## Data Understanding
-Data yang digunakan pada proyek ini adalah [student performance dataset](https://www.kaggle.com/datasets/amrmaree/student-performance-prediction) yang di unduh dari kaggle. Dataset ini memiliki 708 baris hasil nilai ujian akhir siswa serta beberapa variabel lainnya.
+Data yang digunakan pada proyek ini adalah student performance dataset yang di unduh dari tautan berikut https://www.kaggle.com/datasets/amrmaree/student-performance-prediction). Dataset ini memiliki **708 baris** hasil nilai ujian akhir siswa serta **10 kolom** variabel/fitur.
 Adapun variabel-variabel pada [student performance dataset](https://www.kaggle.com/datasets/amrmaree/student-performance-prediction) adalah sebagai berikut:
   1. **ID_Siswa** : merupakan pengenal unik untuk setiap siswa
   2. **Jenis Kelamin** : merupakan jenis kelamin siswa (Laki-laki atau Perempuan)
@@ -32,14 +32,17 @@ Adapun variabel-variabel pada [student performance dataset](https://www.kaggle.c
   6. **Tingkat pendidikan orang tua** : merupakan tingkat pendidikan orang tua siswa (SMA, Sarjana, Magister, dan Doktor)
   7. **Akses internet di rumah** : merupakan pernyataan apakah siswa memiliki akses internet di rumah (Ya/Tidak)
   8. **Kegiatan ekstrakurikuler** : merupakan pernyataan apakah siswa berpartisipasi dalam kegiatan ekstrakurikuler (Ya/Tidak)
-  9. **Nilai ujian akhir** : merupakan hasil nilai ujian akhir siswa (50 - 100)
+  9. **Nilai ujian akhir** : merupakan hasil nilai ujian akhir siswa (50 - 77)
   10. **Lulus/Gagal** : merupakan status siswa berdasarkan nilai ujian akhir (Lulus/Gagal)
 
 Adapun tahapan yang diperlukan untuk memahami data yaitu:
 1. **Data loading**
-2. **Exploratory Data Analysis** - Menampilkan Informasi umum dataset, ringkasan statistik dataset, mengecek data duplikat, missing value, outlier dan menghapus beberapa variabel yang tidak diperlukan dalam analisis
+2. **Exploratory Data Analysis** - Menampilkan Informasi umum dataset, ringkasan statistik dataset, mengecek data duplikat, missing value dan outlier 
 3. **Exploratory Data Analysis** - Univariate Analysis (visualisasi fitur kategorik dan numerik)
 4. **Exploratory Data Analysis** - Multivariate Analysis (mengecek pengaruh fitur kategorik dan numerik terhadap variabel dependen yakni Final_Exam_Score serta menampilkan matriks korelasinya)
+
+Setelah proses EDA, diperoleh output:
+
 
 ## Data Preparation
 Adapun tahapan persiapan data yang dilakukan yaitu:
